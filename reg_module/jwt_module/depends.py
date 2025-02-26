@@ -1,4 +1,5 @@
 import datetime
+import logging
 
 import jwt
 from fastapi import Depends, HTTPException, status, Request
@@ -115,7 +116,9 @@ def get_user_from_token(
     """
     try:
         payload: dict = jwt.decode(token, config.jwt.public_key_path, algorithms=[config.jwt.algorithm])
+        print(payload)
     except jwt.InvalidTokenError:
+        logging.exception("invalid token")
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Invalid token",
