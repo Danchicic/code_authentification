@@ -1,7 +1,7 @@
 import './App.css'
 import {useEffect, useState} from "react";
 import {amILogged} from "./api/Auth.js";
-import {AuthContext} from "./context/";
+import {AuthContext} from "./context/index.js";
 import {BrowserRouter} from "react-router-dom";
 import AppRouter from "./componenets/AppRouter.jsx";
 

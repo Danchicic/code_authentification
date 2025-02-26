@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {Navigate, Route, Routes} from "react-router-dom";
-import {userRoutes} from "../routes/";
-import {AuthContext} from "../context";
+import {userRoutes} from "../routes/index.js";
+import {AuthContext} from "../context/index.js";
 
 function checkRouterByAuth(route, index, isAuth) {
     if (route.path.includes("auth") && isAuth) {
